@@ -1,0 +1,46 @@
+<!-- views/admin.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pageTitle %></title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="bg-gray-800">
+        <div class="container mx-auto flex justify-center items-center py-4">
+            <img src="/images/acelogo.jpg" alt="Centered Image" class="h-12">
+        </div>
+    </nav>
+    <div class="max-w-4xl mx-auto py-8">
+        <h1 class="text-2xl font-bold mb-4">Welcome to Admin Panel</h1>
+        <div class="overflow-x-auto">
+            <table class="min-w-full bg-white border border-gray-200">
+                <thead>
+                    <tr>
+                        <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                      
+                        <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Roll Number</th>
+                        <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Section</th>
+                        <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Branch</th>
+                        <th class="px-6 py-3 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">Class</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% users.forEach(user => { %>
+                        <tr class="hover:bg-gray-100">
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200"><%= user.name %></td>
+                      
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200"><%= user.rollNo %></td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200"><%= user.section %></td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200"><%= user.branch %></td>
+                            <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200"><%= user.class %></td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
