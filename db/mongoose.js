@@ -4,8 +4,7 @@ const mongoose = require('mongoose');
 const mongooseconnect = process.env.MONGODBONLINE; // Ensure this environment variable is correctly set
 
 mongoose.connect(mongooseconnect, { 
-  useNewUrlParser: true, 
-  useUnifiedTopology: true 
+  
 });
 
 const db = mongoose.connection;
