@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 const mongoose = require('./db/mongoose'); 
 const User = require('./model/User'); 
 const adminPageRouter = require('./adminPage');
+require('dotenv').config()
 const app = express();
 app.set('view engine', 'ejs');
 
@@ -75,8 +76,8 @@ app.post('/submit', async (req, res) => {
     }
 });
 
-const hardcodedAdminEmail = 'ACE_placement@gmail.com';
-const hardcodedAdminPassword = 'AceAptitude@2024';
+const hardcodedAdminEmail = process.env.aceEMAIL;
+const hardcodedAdminPassword = process.env.acePASSWORD;
 
 app.get('/admin/login', (req, res) => {
     res.render('adminLogin', {
