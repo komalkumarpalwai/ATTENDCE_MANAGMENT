@@ -1,7 +1,7 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 
-const mongooseconnect = process.env.MONGODBONLINE; // Ensure this environment variable is correctly set
+const mongooseconnect = process.env.MONGODBONLINE; 
 
 mongoose.connect(mongooseconnect, { 
   
